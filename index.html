@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>
+          FORMULARIO DE REGISTRO
+        </h1>
+          <p>
+            <input type="text" v-model="title" placeholder="Nombre"/>
+          </p>
+          <p>
+            <input type="number" v-model="num" placeholder="Telefono"/>
+          </p>
+          <p>
+            <input type="email" v-model="correo" placeholder="Correo Electronico"/>
+          </p>
+
+
+          <p>
+           
+            
+
+            <button v-on:click="addContacto">Guardar Registro</button>
+          
+          </p>
+        
+        </fieldset>
+        <div>
+          <h3>Lista de Contactos</h3>
+          
+          <div>
+            <ol>
+              <li v-for="(p,index) in contactos">
+                {{p.title}} - {{p.num}} - {{p.correo}}
+
+
+                <button v-on:click="editarContacto(index)">Editar contacto</button>
+                <button v-on:click="eliminarContacto(index)">Eliminar contacto</button>
+
+              </li>
+            </ol>
+            <hr/>
+            <p>
+              
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src='app.js'></script>
+</body>
+</html>
